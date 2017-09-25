@@ -1,0 +1,3 @@
+<h1 class="tx-centered">{{ article.title|capfirst }}</h1>
+<h2 class="tx-centered">{{ article.subtitle }}</h2>
+<h5 class="tx-centered"><i>Posted by <a href="{% url 'about' %}">{{ article.author.first_name }} {{ article.author.last_name }}</a> on {{ article.formatted_date }}</i></h5>

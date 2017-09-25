@@ -1,0 +1,13 @@
+<div class="article-item row">
+    <a class="title-link" href="{% url 'article_detail' article_id=article.id %}">
+        <h2 class="title">{{ article.title }}</h2>
+        <h3 class="subtitle">{{ article.subtitle }}</h3>
+    </a>
+    <p class="article-info">Posted by <a href="{% url 'about' %}">{{ article.author.first_name }} {{ article.author.last_name }}</a> on {{ article.formatted_date }}</p>
+    <p class="article-info">in <a href="{% url 'list_by_category' category_id=article.category.id %}">{{ article.category.title|title }}</a></p>
+    <p class="article-info">Tags:
+        {% for tag in article.tags.all %}
+            <a href="{% url 'list_by_tag' tag_id=tag.id %}">{{ tag.title }}</a>{% if not forloop.last %}, {% endif %}
+        {% endfor %}
+    </p>
+</div>

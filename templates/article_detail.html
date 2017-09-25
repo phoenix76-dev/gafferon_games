@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block head %}
+    {% include title_block_name %}
+{% endblock %}
+
+{% block content %}
+    <div class="article-content">
+        {{ article.content|safe }}
+    </div>
+{% endblock %}
